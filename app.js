@@ -1,6 +1,6 @@
 function SimpleCourses(fbname) {
-
-  var firebase = new Firebase("https://" + fbname + ".firebaseio.com/");
+  fbname = 'simplecourses-3b2fe';
+  var firebase = new Firebase("https://simplecourses-3b2fe.firebaseio.com/");
   this.firebase = firebase;
   var linksRef = firebase.child('links');
   var usersRef = firebase.child('users');
@@ -80,16 +80,11 @@ function SimpleCourses(fbname) {
 	    }
 	    instance.onLinksChanged(preparedLinks);
 	  });
-
   };
-
 };
 
-
 $(document).ready(function() {
-
-	var fb = new SimpleCourses('livelinks1234');
-
+	var fb = new SimpleCourses('simplecourses-3b2fe');
 	fb.onError = function(error) {
 		alert(error.message);
 	}
